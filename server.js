@@ -10,7 +10,9 @@ const genAI = new GoogleGenerativeAI("AIzaSyAneaiTlHqz4TRCiOR0rriOFJMNyUMHF-U");
 
 app.use(bodyParser.json());
 app.use(cors());
-
+app.get("/", (req, res) => {
+  res.send("API Working");
+});
 app.post("/getResponse", async (req, res) => {
   const { name, problem } = req.body;
 
